@@ -7,4 +7,8 @@ from django.http import HttpResponse
 # Create your views here.
 class Home(View):
   def get(self, request):
-    return HttpResponse('Albums Home')
+    return HttpResponse('Albums Homepage')
+
+class About(View):
+  def get(self, request):
+    return HttpResponse('Albums About page')
