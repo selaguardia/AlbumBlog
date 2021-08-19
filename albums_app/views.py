@@ -5,7 +5,7 @@ from django.views import View
 # from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
-
+from django.urls import reverse
 from .models import Album
 
 # Create your views here.
@@ -25,3 +25,12 @@ class AlbumCreate(CreateView):
   model = Album
   fields = ['title', 'artist', 'release_date', 'cover_img', 'description']
   template_name = 'album_create.html'
+  success_url = '/'
+
+  def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(AlbumCreate, self).form_valid(form)
+
+  def get_success_url(self):
+      # go to /artists/pk
+      return reverse("home")
