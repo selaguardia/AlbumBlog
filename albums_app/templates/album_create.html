@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% comment %} block for title tag in the head {% endcomment %}
+{% block title %}Home{% endblock  %}
+
+{% comment %} main content {% endcomment %}
+{% block content %}
+<div class="px-4 py-4  text-left bg-secondary">
+  <h1 class="display-7 fw-bold">Enter New Album Information:</h1> 
+</div>
+  <div class="container-sm col-6 mt-5">
+    <form>
+      <div class="mb-3 mt-5">
+        <label class="form-label">Title:</label>
+        <input type="email" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Artist:</label>
+        <input type="email" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Released Date:</label>
+        <input type="email" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Cover Image:</label>
+        <input type="email" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Description:</label>
+        <input type="email" class="form-control">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+
+
+{% endblock %}

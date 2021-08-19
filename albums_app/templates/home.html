@@ -1,12 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Albums</title>
-  </head>
-  <body>
-    <h1>Albums Home</h1>
-  </body>
-</html>
+{% extends 'base.html' %}
+{% comment %} block for title tag in the head {% endcomment %}
+{% block title %}Home{% endblock  %}
+
+{% comment %} main content {% endcomment %}
+{% block content %}
+
+ 
+<h1>Albums Homepage</h1>
+
+<div class="row row-cols-1 row-cols-md-4 g-4 mx-3">
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://i.pinimg.com/originals/06/61/c5/0661c5746c2f1cafd727c1e72e630946.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Title: Bad Bunny</h5>
+        <h5 class="card-title">Artist:</h5>
+        <h6 class="card-title">Release Date:</h6>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/718Vy0HsjbL._SL1200_.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title">Title: Drake</h5>
+          <h5 class="card-title">Artist:</h5>
+          <h6 class="card-title">Release Date:</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://upload.wikimedia.org/wikipedia/en/9/9c/Selena_-_Amor_Prohibido.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Title: Selena</h5>
+        <h5 class="card-title">Artist:</h5>
+        <h6 class="card-title">Release Date:</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://www.the360mag.com/wp-content/uploads/2021/04/Manuel-Turizo-360-Magazine.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Title: Manuel Turizo</h5>
+        <h5 class="card-title">Artist:</h5>
+        <h6 class="card-title">Release Date:</h6>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+    
