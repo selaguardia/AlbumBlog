@@ -5,53 +5,36 @@
 {% comment %} main content {% endcomment %}
 {% block content %}
 
- 
-<h1>Albums Homepage</h1>
-
-<div class="row row-cols-1 row-cols-md-4 g-4 mx-3">
+<div class="px-4 py-4  text-center bg-info">
+  <h1 class="display-7 fw-bold">Favorite Albums</h1> 
+</div>
+<div class="row row-cols-1 row-cols-md-4 g-4 mx-3 ">
+{% for album in albums %}
   <div class="col">
     <div class="card h-100">
-      <img src="https://i.pinimg.com/originals/06/61/c5/0661c5746c2f1cafd727c1e72e630946.jpg" class="card-img-top" alt="...">
+      <img src="{{ album.cover_img }}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Title: Bad Bunny</h5>
-        <h5 class="card-title">Artist:</h5>
-        <h6 class="card-title">Release Date:</h6>
-        
+        <p class="card-title">Title: {{ album.title }}</p>
+        <p class="card-title">Artist: {{ album.artist }}</p>        
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Learn More . . .
+            </button>
+          </h2>
+          <div id="collapseOne" class="card-footer accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p class="card-title">Release Date: {{ album.release_date }}</p>
+              <p class="card-title">Description: {{ album.description }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="https://images-na.ssl-images-amazon.com/images/I/718Vy0HsjbL._SL1200_.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-          <h5 class="card-title">Title: Drake</h5>
-          <h5 class="card-title">Artist:</h5>
-          <h6 class="card-title">Release Date:</h6>
-      </div>
-    </div>
-  </div>
-
-  <div class="col">
-    <div class="card h-100">
-      <img src="https://upload.wikimedia.org/wikipedia/en/9/9c/Selena_-_Amor_Prohibido.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Title: Selena</h5>
-        <h5 class="card-title">Artist:</h5>
-        <h6 class="card-title">Release Date:</h6>
-      </div>
-    </div>
-  </div>
-
-  <div class="col">
-    <div class="card h-100">
-      <img src="https://www.the360mag.com/wp-content/uploads/2021/04/Manuel-Turizo-360-Magazine.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Title: Manuel Turizo</h5>
-        <h5 class="card-title">Artist:</h5>
-        <h6 class="card-title">Release Date:</h6>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 </div>
 {% endblock %}
     

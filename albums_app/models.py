@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import Model, CharField, DateField, TextField
+from django.db.models import Model, CharField, DateField, TextField, DateTimeField
 
 # Create your models here.
 class Album(Model):
@@ -8,11 +8,12 @@ class Album(Model):
   release_date = DateField()
   cover_img = CharField(max_length=500)
   description = TextField(max_length=500)
+  created_at = DateTimeField(auto_now_add=True)
 
   def __str__(self):
     return self.title
 
   class Meta:
-    ordering = ['release_date']
+    ordering = ['created_at']
 
  
